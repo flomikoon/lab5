@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/fragment1">
+
+    <fragment
+        android:id="@+id/fragment1"
+        android:name="com.example.lab33.task5.Fragment1"
+        android:label="Fragment1"  >
+
+        <action android:id="@+id/first_to_second"
+            app:destination="@id/fragment2"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="com.example.lab33.task5.Fragment2"
+        android:label="Fragment2" >
+
+        <action android:id="@+id/second_to_third"
+            app:destination="@id/fragment3"/>
+
+        <action android:id="@+id/second_to_first"
+            app:destination="@id/fragment1"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment3"
+        android:name="com.example.lab33.task5.Fragment3"
+        android:label="Fragment3" >
+
+    <action android:id="@+id/third_to_second"
+        app:destination="@id/fragment2"/>
+
+    <action android:id="@+id/third_to_first"
+        app:destination="@id/fragment1"/>
+
+        <action android:id="@+id/third_to_four"
+            app:destination="@id/fragment4"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment4"
+        android:name="com.example.lab33.task5.Fragment4"
+        android:label="Fragment4">
+
+    <action android:id="@+id/four_to_five"
+        app:destination="@id/fragment5"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment5"
+        android:name="com.example.lab33.task5.Fragment5"
+        android:label="Fragment5" >
+
+    <action android:id="@+id/five_to_third"
+        app:destination="@id/fragment3"/>
+
+    </fragment>
+</navigation>
