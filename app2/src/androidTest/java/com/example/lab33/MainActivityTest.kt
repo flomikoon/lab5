@@ -50,6 +50,15 @@ class MainActivityTest {
         isFirst()
 
         onView(withId(R.id.Go12)).perform(click())
+        onView(withId(R.id.Go23)).perform(click())
+        isThird()
+        pressBack()
+        isSecond()
+
+        pressBack()
+        isFirst()
+
+        onView(withId(R.id.Go12)).perform(click())
         onView(withId(R.id.Go21)).perform(click())
         onView(withId(R.id.Go12)).perform(click())
         onView(withId(R.id.Go21)).perform(click())

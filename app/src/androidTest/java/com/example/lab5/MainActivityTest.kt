@@ -24,6 +24,11 @@ class MainActivityTest {
 
     @Test
     fun mainActivityTest() {
+
+        activityTestRule.scenario.onActivity{
+            it.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        }
+
         val changeB = onView(withId(R.id.changeButton))
         val editT = onView(withId(R.id.editText))
 
@@ -32,9 +37,11 @@ class MainActivityTest {
         changeB.perform(click())
         changeB.check(ViewAssertions.matches(withText("Second")))
 
+
         activityTestRule.scenario.onActivity{
-            it.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+                it.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
         }
+
         editT.check(ViewAssertions.matches(withText("Main")))
         changeB.check(ViewAssertions.matches(withText("First")))
     }
